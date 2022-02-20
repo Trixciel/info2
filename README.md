@@ -1,9 +1,8 @@
 # Info2
-Ya les différents programmes dans les fichiers du repo, si vous voulez jeter un coup d'oeil.
+En gros, sur cette branche, il ya un programme avec toutes les fonctions demandées 
 
-### Truc important : les questions sont séparées, donc j'ai importé les fonctions nécessaires dans chaque programme...
-## Ne le faites pas! 
+## Faites preuve de bon sens, et ne faites pas qu'un copier-coller
 
-Normalement, toutes les fonctions sont déjà dans votre programme...
+### Essayez de comprendre comment ca fonctionne, et refaites le programme par vous-même !
 
-Il faut bien importer binarise et random par contre, ca c'est nécessaire.
+N'oubliez pas de mettre binarise.py dans le même dossier que votre programme, et d'installer le module random (avec pip, par exemple)
