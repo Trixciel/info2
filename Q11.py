@@ -23,10 +23,18 @@ for pi in P:
 N_auto+=random.randrange(1,6904)
 #N_auto est donc > à la somme des pi, on peut remplacer le nombre aléatoire par 1, ca marche aussi
 
-for A_auto in range(2,N_auto):
-    if N_auto%A_auto!=0: break
-#On trouve le plus petit entier qui n'est pas un diviseur de N_auto, il est donc premier avec N_auto
-#(Leur PGCD vaut forcément 1, d'ou la relation du dessus)
+def premier_avec_N(N):
+    for i in range(2,N):
+        premier_bool=True
+        for j in range(2,N):
+            if (i*j)%N==0:
+                premier_bool=False
+        if premier_bool:
+            return i
+    return None
+
+A_auto=premier_avec_N(N_auto)
+#On trouve un entier A_auto premier avec N_auto
 
 #Remarque : à partir de maintenant, les opérations seront effectuées 2 fois:
 #1 fois avec A/N choisis au hasard, et 1 fois avec les valeurs prédéfinies
