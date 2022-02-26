@@ -43,21 +43,8 @@ def inverse_modulo(A:int,N:int):
 
 #Q4
 
-#CETTE QUESTION MARCHE PAS, REPASSEZ PLUS TARD
-
-#def alg_euclide(a:int,b:int):
-#    """Renvoie PGCD(a,b) avec l'algorithme d'Euclide
-#    Arguments :
-#    - a (entier)
-#    - b (entier)
-#    """
-#    q,r=a//b,a%b
-#    if r==0:
-#        return min(a,b)
-#    while r!=0:
-#        a,b,rprime=b,r,r
-#        q,r=a//b,a%b
-#    return rprime
+#J'ai réussi à la faire marcher, mais ca m'a couté 1h par jour pendant une semaine, donc vous l'aurez pas :P
+#De tte façon elle est facultative...
 
 #Q5
 
@@ -178,19 +165,27 @@ A_auto=premier_avec_N(N_auto)
 #1 fois avec A/N choisis au hasard, et 1 fois avec les valeurs prédéfinies
 
 #d
-cle_publique,cle_publique_auto=[],[]
+
+#Nombres choisis manuellement
+cle_publique=[]
 for pi in P:
     bpi=(A*pi)%N
-    cle_publique.append(bpi) #Valeur définie
+    cle_publique.append(bpi)
+    
+#Nombres choisis algorithmiquement
+cle_publique_auto=[]
+for pi in P:
     bpi_auto=(A_auto*pi)%N
     cle_publique_auto.append(bpi_auto) #Valeur aléatoire
+
 
 #e
 message="Le chiffrement asymétrique me rend fou"
 message_bin=bn.binarise(message)
 message_8=decoupage(message_bin,8)
-message_chiffre_publique=chiffre_message(cle_publique,message_8) #Valeur définie
-message_chiffre_publique_auto=chiffre_message(cle_publique_auto,message_8) #Valeur aléatoire
+message_chiffre_publique=chiffre_message(cle_publique,message_8) #Valeur manuelle
+
+message_chiffre_publique_auto=chiffre_message(cle_publique_auto,message_8) #Valeur algorithmique
 
 #f
 def decode_Merkle_Hellman(cle_privee:tuple,message_chiffre:list):
