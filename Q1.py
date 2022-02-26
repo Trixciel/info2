@@ -13,3 +13,4 @@ def decoupage(message:list,taille:int):
             final.append(temp)
             temp=[]
     if temp != []: final.append(temp) #On oublie pas d'ajouter la liste temporaire à final, sauf si elle est vide.
+    return final
