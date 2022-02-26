@@ -8,8 +8,8 @@ def genere_cle(n:int):
     """
     liste,somme=[],0
     for i in range(n):
-        if not len(liste): newitem=random.randrange(0,10) #Les rk sont des nombres pseudo-random de 1 à 9
-        else: newitem=somme+random.randrange(0,10) #J'aurais idéalement préféré utiliser secrets, mais random est bien plus populaire.
+        if not len(liste): newitem=random.randrange(1,10) #Les rk sont des nombres pseudo-random de 1 à 9
+        else: newitem=somme+random.randrange(1,10) #J'aurais idéalement préféré utiliser secrets, mais random est bien plus populaire.
         somme+=newitem
         liste.append(newitem)
     return liste
